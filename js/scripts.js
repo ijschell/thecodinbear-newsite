@@ -75,8 +75,16 @@ function scrollToAnchor(aid){
     $('html,body').animate({scrollTop: aTag.offset().top},'slow');
 }
 
-$(document).ready(function(){
+function loadSuccess(){
+  $('#loader').addClass('loaded');
+  setTimeout(function(){
+    $('#loader').remove();
+  }, 1000);
+  $('body').css('overflow-y', 'auto');
   home.titleEffect();
+}
+
+$(document).ready(function(){
   //random banner
   home.randomBanner();
 
@@ -102,3 +110,7 @@ $(document).on('click','#servicios .service',function(e){
   var service = $(this).attr('data-service');
   home.printService(service);
 });
+
+$(window).on('load', function(){
+  loadSuccess();
+})

@@ -37,7 +37,8 @@ html {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 15px;
-    color: #c3c3c3; }
+    color: #c3c3c3;
+    overflow-y: hidden; }
     @media (max-width: 425px) {
       html body {
         font-size: 12px; } }
@@ -366,5 +367,36 @@ footer {
     footer a .icon-facebook {
       width: 15px;
       margin-left: 5px; }
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: #000;
+  overflow: hidden;
+  transition: all 1s ease; }
+  #loader div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+    #loader div img {
+      border-radius: 50%; }
+    #loader div p {
+      font-size: 1.5em;
+      margin: 20px;
+      color: #fff;
+      font-weight: 300; }
+
+#loader.loaded {
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  border-radius: 100% 50%; }
 
 /*# sourceMappingURL=master.css.map */
