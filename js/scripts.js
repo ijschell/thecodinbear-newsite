@@ -41,13 +41,13 @@ var home = {
   printService : function(service){
     switch (service) {
       case 'web':
-        $('.services-result').load('./services/web.html');
+        $('#loadWeb').load('./services/web.html');
       break;
       case 'update':
-
+        $('#loadActualizaciones').load('./services/actualizaciones.html');
       break;
       case 'app':
-
+      $('#loadApp').load('./services/app.html');
       break;
       case 'imagen':
 
@@ -55,30 +55,50 @@ var home = {
     }
   },
 
-  randomHeight : function(){
-    $('.grid-item').each(function(){
-      var x = Math.floor((Math.random() * 5) + 0);
-      var h = [60, 80, 100, 120, 150];
-      $(this).css('height', h[x]+'px');
-    });
-  }
+  randomBanner : function(){
+    var i = Math.floor((Math.random() * 2) + 1);
+    var image = [
+      './images/oso1.jpg',
+      './images/oso2.jpg'
+    ];
+    $('header').attr('style', 'background-image: url("'+image[i-1]+'")');
+    if(i == 2){
+      $('header h1').css('color', '#fff').css('text-shado', '1px 1px 1px #000');
+      //$('header .go_back').addClass('go_back_black');
+    }
+  },
 
+}
+
+function scrollToAnchor(aid){
+    var aTag = $("[data-anchor='"+ aid +"']");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
 }
 
 $(document).ready(function(){
   home.titleEffect();
-  home.randomHeight();
-  $('.grid').masonry({
-    // set itemSelector so .grid-sizer is not used in layout
-    itemSelector: '.grid-item',
-    // use element for option
-    columnWidth: '.grid-sizer',
-    percentPosition: true
-  })
+  //random banner
+  home.randomBanner();
+
+  //slider
+  $('.slider-work').slick({
+    autoplay: true,
+    autoplaySpeed: 4000,
+    arrows: false,
+    fade: true,
+    pauseOnFocus: false,
+  });
+
+  //print web
+  home.printService('web');
+  //print update
+  home.printService('update');
+  //print app
+  home.printService('app');
 });
 
 $(document).on('click','#servicios .service',function(e){
   e.preventDefault();
   var service = $(this).attr('data-service');
   home.printService(service);
-})
+});
