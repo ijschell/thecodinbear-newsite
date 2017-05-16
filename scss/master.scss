@@ -25,6 +25,34 @@ font-family: 'Taviraj', serif;
   transform: translateX(-50%);
 }
 
+#loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: #000;
+  overflow: hidden;
+  transition: all 1s ease;
+  div{
+    @include centered;
+    text-align: center;
+    img{
+      border-radius: 50%;
+    }
+    p{
+      font-size: 1.5em;
+      margin: 20px;
+      color: #fff;
+      font-weight: 300;
+    }
+  }
+}
+#loader.loaded{
+  opacity: 0;
+}
+
 h2, h3, h4{
   font-family: 'Taviraj', serif;
 }
@@ -46,7 +74,7 @@ h4{
 }
 h5{
   font-size: 1.2em;
-  color: #222;
+  color: #ff5b00;
   margin: 30px 0;
 }
 html{
@@ -192,6 +220,9 @@ html{
         p{
           font-weight: 300;
           height: 45px;
+          @media(max-width: 320px){
+            height: auto;
+          }
           a{
             color: #000;
             &:hover{
@@ -243,7 +274,7 @@ html{
         width: 650px;
         padding: 50px;
         margin-top: 50px;
-        /*border: solid 1px #ccc;*/
+        border: solid 1px #e4e4e4;
         @media(max-width: 768px){
           position: relative;
           padding: 0px;
@@ -375,7 +406,7 @@ html{
       }
       .subtitle{
         text-align: center;
-        color: #333;
+        color: #a7440d;
         padding-bottom: 30px;
       }
       #loadWeb{
@@ -390,7 +421,7 @@ html{
       }
       .subtitle{
         text-align: center;
-        color: #333;
+        color: #a7440d;
         padding-bottom: 30px;
       }
       #loadActualizaciones{
@@ -411,7 +442,7 @@ html{
       }
       .subtitle{
         text-align: center;
-        color: #333;
+        color: #a7440d;
         padding-bottom: 30px;
       }
       #loadApp{
@@ -467,36 +498,4 @@ footer{
       margin-left: 5px;
     }
   }
-}
-
-#loader{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  background: #000;
-  overflow: hidden;
-  transition: all 1s ease;
-  div{
-    @include centered;
-    text-align: center;
-    img{
-      border-radius: 50%;
-    }
-    p{
-      font-size: 1.5em;
-      margin: 20px;
-      color: #fff;
-      font-weight: 300;
-    }
-  }
-}
-#loader.loaded{
-  width: 0;
-  height: 0;
-  top: 50%;
-  left: 50%;
-  border-radius: 100% 50%;
 }

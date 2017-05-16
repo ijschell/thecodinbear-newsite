@@ -1,9 +1,9 @@
 <header>
   <h1><span class="left">{</span><span class="name"></span><span class="line">_</span><span class="right">}</span></h1>
-  <a href="#" class="go_back"><i class="material-icons">&#xE323;</i><i class="material-icons">&#xE313;</i></a>
+  <a href="#" class="go_back" onclick="scrollToAnchor('servicios'); return false;"><i class="material-icons">&#xE313;</i></a>
 </header>
 
-<section id="servicios">
+<section id="servicios" data-anchor="servicios">
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-8 col-md-6 hidden-sm hidden-xs services-image">
@@ -17,7 +17,7 @@
             <div class="row">
               <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
                 <div class="icon">
-                  <i class="material-icons">&#xE1B1;</i>
+                  <a href="#" onclick="scrollToAnchor('web'); return false;"><i class="material-icons">&#xE1B1;</i></a>
                 </div>
               </div>
               <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
@@ -30,7 +30,7 @@
             <div class="row">
               <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
                 <div class="icon">
-                  <i class="material-icons">&#xE863;</i>
+                  <a href="#" onclick="scrollToAnchor('actualizaciones'); return false;"><i class="material-icons">&#xE863;</i></a>
                 </div>
               </div>
               <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
@@ -43,7 +43,7 @@
             <div class="row">
               <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
                 <div class="icon">
-                  <i class="material-icons">&#xE5C3;</i>
+                  <a href="#" onclick="scrollToAnchor('app'); return false;"><i class="material-icons">&#xE5C3;</i></a>
                 </div>
               </div>
               <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
